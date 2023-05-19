@@ -1,24 +1,21 @@
-const User = require('../models/user');
+const User = require('../models/User');
 
 const userSeeds = [
   {
     username: 'john.doe',
     email: 'john.doe@example.com',
-    password: 'password123',
-    book_id: 1,
+    password: 'password123'
   },
   {
     username: 'jane.smith',
     email: 'jane.smith@example.com',
-    password: 'abc123',
-    book_id: 2,
+    password: 'abc123'
   },
   {
     username: 'bob.johnson',
     email: 'bob.johnson@example.com',
-    password: 'passw0rd',
-    book_id: 3,
-  },
+    password: 'passw0rd'
+    },
   // Add more seed objects as needed...
 ];
 

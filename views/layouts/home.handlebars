@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Bootstrap CSS -->
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+      integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk"
+      crossorigin="anonymous"
+    />
+    <!--CSS-->
+    <link rel="stylesheet" href="/public/css/style.css">
+
+    <title>eBook Library</title>
+  </head>
+
+  <body>
+    {{!-- Container --}}
+    
+      {{!-- Navbar --}}
+      <nav class="navbar navbar-expand-lg navbar-dark bg-dark p-4">
+        <a class="navbar-brand" href="/">
+        <img src="/Assets/images/ebook library.jpg" style="width: 150px;" height="150px" class="img-fluid"></a>
+
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-toggle="collapse"
+          data-target="#navbarNav"
+          aria-controls="navbarNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse navigator" id="navbarNav">
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link" href="/"
+                >Home <span class="sr-only">(current)</span></a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/browse">Browse</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/cart">Cart</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/logout">Log out</a>
+            </li>
+          </ul>
+        </div>
+      </nav>  {{!-- /Navbar --}}
+      <div class="container">
+
+      {{{ body }}}
+
+
+    </div>  {{!-- /Container --}}
+
+    <br>
+    <footer class="footer bg-dark text-light p-4" style="text-align: center; justify-content: center;">
+      2023 eBook Library @ ALL RIGHTS RESERVED
+    </footer>
+
+    <!-- jQuery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <!-- Main JS -->
+    {{#each js}}
+      <script src="/js/{{this}}"></script>
+    {{/each}}
+  </body>
+</html>
