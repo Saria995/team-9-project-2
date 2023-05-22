@@ -1,6 +1,7 @@
 const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');
 
+
 class User extends Model {}
 
 User.init(
@@ -30,11 +31,11 @@ User.init(
             len: [6],
         },
     },
-    book_id: {
+    address_id: {
       type: DataTypes.INTEGER,
       allowNull: true,
       references: {
-        model: 'book',
+        model: 'address',
         key: 'id',
       },
     },

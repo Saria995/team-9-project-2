@@ -1,6 +1,4 @@
 const { Model, DataTypes } = require('sequelize');
-const Genre = require('./Genre');
-const Author = require('./Author');
 const sequelize = require('../config/connection.js');
 
 class Book extends Model {}
@@ -47,7 +45,7 @@ Book.init(
       type: DataTypes.INTEGER,
       allowNull: false,
       references: {
-        model: Genre,
+        model: 'genre',
         key: 'id',
       },
     },
@@ -55,7 +53,7 @@ Book.init(
       type: DataTypes.INTEGER,
       allowNull: false,
       references: {
-        model: Author,
+        model: 'author',
         key: 'id',
       },
     },
