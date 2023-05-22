@@ -19,6 +19,9 @@ const userSeeds = [
   // Add more seed objects as needed...
 ];
 
-const seedUsers = () => User.bulkCreate(userSeeds);
+const seedUsers = () => User.bulkCreate(userSeeds, {
+  individualHooks: true,
+  returning: true,
+});
 
 module.exports = seedUsers;

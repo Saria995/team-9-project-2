@@ -37,7 +37,7 @@
         >
           <span class="navbar-toggler-icon"></span>
         </button>
-        <div class="collapse navbar-collapse navigator" id="navbarNav">
+        <div class="collapse navbar-collapse navigator flex" id="navbarNav">
           <ul class="navbar-nav">
             <li class="nav-item">
               <a class="nav-link" href="/"
@@ -50,8 +50,18 @@
             <li class="nav-item">
               <a class="nav-link" href="/cart">Cart</a>
             </li>
-            <li class="nav-item">
-              <a class="nav-link" href="/logout">Log out</a>
+          </ul>
+          <ul class="navbar-nav ml-auto justify-space-between">
+            <li style="display: flex" class="nav-item">
+              {{#if loggedIn}}
+                <!-- If there is a user logged in, show their email and a link to logout -->
+                <a class="nav-link" href="/logout">Log out</a>
+
+                <span class="nav-link"  style="color: white">{{user.username}}</span>
+                {{else}}
+                <!-- Otherwise, show a link to login -->
+                <a class="nav-link" href="/login">Login</a>
+              {{/if}}
             </li>
           </ul>
         </div>
