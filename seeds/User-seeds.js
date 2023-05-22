@@ -19,7 +19,6 @@ const userSeeds = [
     password: 'passw0rd',
     address_id: 2
   },
-  // Add more seed objects as needed...
 ];
 
 const seedUsers = () => User.bulkCreate(userSeeds);
