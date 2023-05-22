@@ -28,6 +28,14 @@ User.init(
         isEmail: true,
       },
     },
+    address_id: {
+      type: DataTypes.INTEGER,
+      allowNull: true,
+      references: {
+        model: 'address',
+        key: 'id',
+      },
+    },
     password: {
       type: DataTypes.STRING,
       allowNull: false,
@@ -49,6 +57,6 @@ User.init(
     underscored: true,
     modelName: 'user',
   }
-);
+  );
 
 module.exports = User;
