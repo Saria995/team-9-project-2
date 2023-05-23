@@ -1,5 +1,5 @@
 const { DataTypes } = require('sequelize');
-const sequelize = require('../config/database');
+const sequelize = require('../config/connection');
 
 const Cart = sequelize.define('Cart', {
   id: {
@@ -22,10 +22,6 @@ const Cart = sequelize.define('Cart', {
       model: 'book',
       key: 'id',
     },
-  },
-  quantity: {
-    type: DataTypes.INTEGER,
-    allowNull: false,
   },
   createdAt: {
     type: DataTypes.DATE,
