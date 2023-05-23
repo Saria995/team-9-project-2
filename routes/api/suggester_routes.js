@@ -21,7 +21,7 @@ router.post('/', async (req, res) => {
         }
 
         // create the message to send to the openai api
-        const message = "Please recommend 10 books for me to read that I might like, considering I enjoy the following books: " + books.join(", ");
+        const message = "Please recommend 10 books for me to read that I might like, considering I enjoy the following books: " + books.join(", ") + ". Please only respond with the list of books.";
 
         // send the message to the openai api
         const completion = await openaiapi.createChatCompletion(
@@ -32,6 +32,7 @@ router.post('/', async (req, res) => {
             }
         );
 
+        console.log(completion.data.choices);
         // return the recommendations
         res.status(200).json({recommendations: completion.data.choices[0].message.content.split("\n")});
     } catch (err) {
