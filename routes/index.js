@@ -12,6 +12,10 @@ router.get('/', async (req, res) => {
   res.render('all', { books, loggedIn: req.session?.loggedIn, user: req.session?.user});
 });
 
+router.get('/home', async (req, res) => {
+  res.render('home', {loggedIn: req.session?.loggedIn, user: req.session?.user, js: ['home.js']});
+});
+
 // Login page
 router.get('/login', (req, res) => {
   res.render('login', {loggedIn: req.session?.loggedIn, user: req.session?.user}); // Render the login.handlebars template
