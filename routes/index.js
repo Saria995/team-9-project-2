@@ -9,7 +9,7 @@ router.get('/', async (req, res) => {
   // Here, handlebars file is rendered
   //   res.sendFile(path.join(__dirname, '../views/index.html'));
   const books = "Harry Potter";
-  res.render('all', { books, loggedIn: req.session?.loggedIn, user: req.session?.user});
+  res.render('home', { books, loggedIn: req.session?.loggedIn, user: req.session?.user});
 });
 
 // Login page
