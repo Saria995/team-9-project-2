@@ -18,6 +18,7 @@ router.post('/', async (req, res) => {
 // update product
 router.put('/:id', (req, res) => {
   // update product data
+  
 });
 
 router.delete('/:id', (req, res) => {
