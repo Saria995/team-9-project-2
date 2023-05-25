@@ -1,4 +1,85 @@
-<div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Book Store</title>
+    <!-- Include necessary CSS and JavaScript files for Bootstrap -->
+    <link rel="stylesheet" href="path/to/bootstrap.min.css">
+    <script src="path/to/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="carousel.css">
+    <script src="carousel.js"></script>
+  </head>
+  <body>
+    <nav class="navbar d-flex justify-content-center">
+      <form class="d-flex align-items-center">
+        <input class="form-control me-2" type="text" placeholder="Search" aria-label="Search">
+        <button class="btn btn-secondary" type="submit">Search</button>
+      </form>
+    </nav>
+
+    <div class="carousel">
+      {{#each books}}
+      <div class="carousel-item">
+        <img src="{{image}}" alt="{{title}}">
+        <div class="carousel-caption">{{title}}</div>
+      </div>
+      {{/each}}
+    </div>
+  </body>
+</html>
+
+
+
+{{!-- <div class="container">
+  <h3>Browse through hundreds of books!</h3>
+
+
+  <div class="row">
+    <div class="col-md-12">
+      <div class="carousel slide multi-item-carousel" id="theCarousel">
+        <div class="carousel-inner">
+          <div class="item active">
+            <div class="col-xs-4"><a href="#1"><img src="https://source.unsplash.com/300x300/?perth,australia" class="img-responsive"></a></div>
+          </div>
+    {{#each books as |painting|}}
+    {{> painting-details}}
+    {{/each}}
+          
+          <!--  Example item end -->
+        </div>
+        <a class="left carousel-control" href="#theCarousel" data-slide="prev"><i class="glyphicon glyphicon-chevron-left"></i></a>
+        <a class="right carousel-control" href="#theCarousel" data-slide="next"><i class="glyphicon glyphicon-chevron-right"></i></a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <div class="carousel slide multi-item-carousel" id="theCarousel">
+        <div class="carousel-inner">
+          <div class="item active">
+            <div class="col-xs-4"><a href="#1"><img src="https://source.unsplash.com/300x300/?perth,australia" class="img-responsive"></a></div>
+          </div>
+    {{#each gallery.paintings as |painting|}}
+    {{> painting-details}}
+    {{/each}}
+          
+          <!--  Example item end -->
+        </div>
+        <a class="left carousel-control" href="#theCarousel" data-slide="prev"><i class="glyphicon glyphicon-chevron-left"></i></a>
+        <a class="right carousel-control" href="#theCarousel" data-slide="next"><i class="glyphicon glyphicon-chevron-right"></i></a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script src="/public/js/browse.js"></script> --}}
+
+
+
+
+{{!-- <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
           <h1>Explore Your Favorite Categories Today</h1>
             <div class="carousel-inner">
               <div class="carousel-item active">
@@ -85,4 +166,4 @@
               </div>
             </div>
           </div>
-        </div>
+        </div> --}}
