@@ -161,6 +161,10 @@
             <h3>Books in the category</h3>
             <div id="booksInCategory">
               <div class="card-columns" id="booksCards">
+                    {{#each bookInfo}}
+                {{> book-details}}
+                {{/each}}
+                
                 <!-- Card -->
                 <!-- /Card -->
               </div>
