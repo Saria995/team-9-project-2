@@ -23,7 +23,8 @@ router.get('/', async (req, res) => {
       // Send over the 'loggedIn' session variable to the 'homepage' template
       res.render('browse', {
         bookInfo,
-        
+        loggedIn: req.session?.loggedIn, 
+        user: req.session?.user
       });
     } catch (err) {
       console.log(err);

@@ -12,7 +12,12 @@ document.getElementById("suggestBtn").addEventListener("click", () => {
         books: books.split(",").map((book) => book.trim()),
       }),
     })
-      .then((res) => res.json())
+      .then((res) => {
+        if (res.ok) {
+          return res.json();
+        }
+        throw new Error('Something went wrong - status code: ' + res.status + ' - ' + res.statusText);
+      })
       .then((data) => {
         console.log(data);
         // alternate white and grey rows
@@ -28,6 +33,10 @@ document.getElementById("suggestBtn").addEventListener("click", () => {
           .join("");
         document.getElementById("loading-indicator").style.display = "none";
         // alert(data.recommendations.join('\n'));
-      });
+      }).catch((error) => {
+        console.log(error)
+        document.getElementById("loading-indicator").style.display = "none";
+        alert(error);
+      });;
   }
 });

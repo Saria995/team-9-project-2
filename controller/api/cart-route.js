@@ -5,7 +5,8 @@ const { Cart, Book } = require('../../models');
 router.get('/', async (req, res) => {
   // Here, index.html is rendered
   res.render('cart', {
-    
+      loggedIn: req.session?.loggedIn, 
+      user: req.session?.user
   });
 });
 // get one product
