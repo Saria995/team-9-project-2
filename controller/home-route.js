@@ -19,7 +19,7 @@ router.get('/sign-up', (req, res) => {
 // Logout page
 router.get('/logout', (req, res) => {
   // Redirect the user to the /api/auth/logout route
-  res.redirect('/auth/logout');
+  res.redirect('/api/auth/logout');
 });
 
 
