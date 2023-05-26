@@ -86,6 +86,22 @@
         </div>
       </div>
     </div>
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-md-6">
+          <div class="card-body border border-dark rounded p-4" style="text-align: center; background-color: #f8f9fa;">
+            <h1>Suggest a Book</h1>
+            <p>Give us a couple of your favorite books, and we will use our AI recommendation engine to suggest some others.</p>
+            <ul id="suggestions"></ul>
+            <div>
+              <img id="loading-indicator" src="/Assets/images/loading.gif" style="display: none;" />
+            </div>
+            <button id="suggestBtn" class="btn btn-primary">Suggest</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
     <div class="card-body">
       <h1 style="background-color: gray; color: white;">ABOUT US</h1>
       <h3>For the love of Books! You'll enjoy using eBooks Library if you love to read anywhere, anytime.</h3>
@@ -104,22 +120,7 @@
     <img id="logoImg" src="/Assets/images/caro image 2.jpg" width="950px" height="500px">
   </div>
 
-  <div class="container">
-    <div class="row justify-content-center">
-      <div class="col-md-6">
-        <div class="card-body border border-dark rounded p-4" style="text-align: center; background-color: #f8f9fa;">
-          <h1>Suggest a Book</h1>
-          <p>Give us a couple of your favorite books, and we will use our AI recommendation engine to suggest some others.</p>
-          <ul id="suggestions"></ul>
-          <div>
-            <img id="loading-indicator" src="/Assets/images/loading.gif" style="display: none;" />
-          </div>
-          <button id="suggestBtn" class="btn btn-primary">Suggest</button>
-        </div>
-      </div>
-    </div>
-  </div>
-
+ 
   <script src="/js/home.js"></script>
 </body>
 </html>
