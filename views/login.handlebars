@@ -1,32 +1,106 @@
-<!-- Login Form Page -->
-<div class="row">
-  <div class="col-md-6 col-md-offset-3">
-    <h2>Login Form</h2>
-    <form class="login">
-      <div class="form-group">
-        <label for="exampleInputEmail1">Email address</label>
-        <input
-          type="email"
-          class="form-control"
-          id="email-input"
-          placeholder="Email"
-        />
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+  <style>
+    body {
+      background-color: #f7f7f7;
+    }
+    
+    .login-container {
+      max-width: 400px;
+      margin: 0 auto;
+      margin-top: 100px;
+      padding: 20px;
+      background-color: #fff;
+      border-radius: 5px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+    
+    .login-container h2 {
+      margin-bottom: 20px;
+      text-align: center;
+    }
+    
+    .login-container form .form-group {
+      margin-bottom: 20px;
+    }
+    
+    .login-container form label {
+      font-weight: bold;
+    }
+    
+    .login-container form input[type="email"],
+    .login-container form input[type="password"] {
+      width: 100%;
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+    }
+    
+    .login-container form input[type="email"]:focus,
+    .login-container form input[type="password"]:focus {
+      outline: none;
+      border-color: #80bdff;
+      box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+    }
+    
+    .login-container form button[type="submit"] {
+      width: 100%;
+      padding: 10px;
+      background-color: #007bff;
+      color: #fff;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+    
+    .login-container p {
+      text-align: center;
+      margin-top: 20px;
+    }
+    .footer {
+      margin-top: 10%;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6 offset-md-3">
+        <div class="login-container">
+          <h2>Login Form</h2>
+          <form class="login">
+            <div class="form-group">
+              <label for="email-input">Email address</label>
+              <input
+                type="email"
+                class="form-control"
+                id="email-input"
+                placeholder="Email"
+              />
+            </div>
+            <div class="form-group">
+              <label for="password-input">Password</label>
+              <input
+                type="password"
+                class="form-control"
+                id="password-input"
+                placeholder="Password"
+              />
+            </div>
+            <button type="submit" class="btn btn-primary">Login</button>
+          </form>
+          <br />
+          <p>Or sign up <a href="/sign-up">here</a></p>
+        </div>
       </div>
-      <div class="form-group">
-        <label for="exampleInputPassword1">Password</label>
-        <input
-          type="password"
-          class="form-control"
-          id="password-input"
-          placeholder="Password"
-        />
-      </div>
-      <button type="submit" class="btn btn-default">Login</button>
-    </form>
-    <br />
-    <p>Or sign up <a href="/sign-up">here</a></p>
+    </div>
   </div>
-</div>
+</body>
+</html>
+
 
 <!-- Include the following script to handle the form submission -->
 <script>
@@ -40,7 +114,7 @@
 
     // Send an AJAX request to the login route
     try {
-      const response = await fetch('/auth/login', {
+      const response = await fetch('/api/auth/login', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

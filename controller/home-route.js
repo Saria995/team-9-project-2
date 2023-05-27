@@ -1,11 +1,8 @@
 const router = require('express').Router();
-const {Book,Author} = require('../../models');
 // route to get all dishes
 router.get('/', async (req, res) => {
     // Here, index.html is rendered
-    res.render('home', {
-      
-    });
+    res.render('home', {loggedIn: req.session?.loggedIn, user: req.session?.user});
   });
 
 // Login page
@@ -22,7 +19,7 @@ router.get('/sign-up', (req, res) => {
 // Logout page
 router.get('/logout', (req, res) => {
   // Redirect the user to the /api/auth/logout route
-  res.redirect('/auth/logout');
+  res.redirect('/api/auth/logout');
 });
 
 
