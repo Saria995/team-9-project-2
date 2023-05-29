@@ -1,6 +1,6 @@
 const router = require('express').Router();
 const apiRoutes = require('..');
-// const withAuth = require('../../middleware/auth');
+const withAuth = require('../../middleware/auth');
 
 const userRoutes = require('./auth_routes');
 const browseRoutes = require('./browse-route');

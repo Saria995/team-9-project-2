@@ -1,6 +1,6 @@
 const router = require('express').Router();
-const { Cart, Book } = require('../../models');
-
+const { Cart, Book,Purchase } = require('../../models');
+const withAuth = require('../../middleware/auth');
 // The `/api/products` endpoint
 router.get('/', async (req, res) => {
   // Here, index.html is rendered
@@ -14,7 +14,17 @@ router.get('/:id', async (req, res) => {
 });
 
 // create new product
-router.post('/', async (req, res) => {
+router.post('/', withAuth, async (req, res) => {
+  try {
+    const newPurchase = await Purchase.create({
+      ...req.body,
+      user_id: req.session.user_id,
+    });
+
+    res.status(200).json(newPurchase);
+  } catch (err) {
+    res.status(400).json(err);
+  }
 });
 
 // update product
