@@ -57,6 +57,10 @@ Book.init(
         key: 'id',
       },
     },
+     image_link: {
+      type: DataTypes.STRING,
+      allowNull: true, // Set to false if the image link is required
+    },
   },
   {
     sequelize,
