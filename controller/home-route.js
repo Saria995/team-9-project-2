@@ -1,4 +1,7 @@
 const router = require('express').Router();
+const {Book} = require('../models');
+
+
 // route to get all dishes
 router.get('/', async (req, res) => {
     // Here, index.html is rendered
@@ -22,5 +25,17 @@ router.get('/logout', (req, res) => {
   res.redirect('/api/auth/logout');
 });
 
+router.get('/book/:id', async (req, res) => {
+  try {
 
+    const dbBookData = await Book.findByPk(req.params.id)
+    const book = dbBookData.get({ plain: true });
+    console.log(book)
+    res.render('book', { book
+    });
+  } catch (err) {
+    console.log(err);
+    res.status(500).json(err);
+  }
+});
 module.exports = router;
