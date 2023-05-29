@@ -14,12 +14,12 @@ router.get('/', async (req, res) => {
         ],
       });
       
-      console.log(bookData);
+      //console.log(bookData);
       
       const bookInfo = bookData.map((library) =>
         library.get({ plain: true }), 
       );
-      
+      console.log(bookInfo)
       // Send over the 'loggedIn' session variable to the 'homepage' template
       res.render('browse', {
         bookInfo,

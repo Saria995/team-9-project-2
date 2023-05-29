@@ -57,6 +57,7 @@ Book.init(
         key: 'id',
       },
     },
+    
   },
   {
     sequelize,

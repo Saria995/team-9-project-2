@@ -4,6 +4,7 @@ const bookSeeds = [
   {
     title: 'Fantastic Beasts & Where to Find Them',
     author: 'J.K. Rowling',
+    image_link:"",
     publication_year: 2016,
     isbn: '9781338216790',
     price: 12.99,
@@ -15,6 +16,7 @@ const bookSeeds = [
   {
     title: 'Bag of Bones',
     author: 'Stephen King',
+    image_link: "",
     publication_year: 1998,
     isbn: '9780446310789',
     price: 10.99,
