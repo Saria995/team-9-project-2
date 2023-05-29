@@ -9,7 +9,6 @@ document.addEventListener('DOMContentLoaded', function() {
       // Handle the continue browsing button click event
       console.log('Continue browsing button clicked');
       window.location.href = 'path/to/browse/page.html';
-      // Add your logic here
     });
   
     confirmPurchaseButton.addEventListener('click', function() {

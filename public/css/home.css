@@ -1,0 +1,72 @@
+/* Mobile-friendly styles */
+    @media (max-width: 768px) {
+      .cardA {
+        width: auto;
+        margin: 20px;
+      }
+      
+      #logoImg {
+        width: 100%;
+        height: auto;
+      }
+      
+      .col-md-6 {
+        margin-top: 20px;
+      }
+    }
+    
+    /* Global styles */
+    body {
+      font-family: Arial, sans-serif;
+    }
+    
+    h1, h2, h3 {
+      margin: 10px 0;
+      padding: 10px;
+    }
+    
+    .cardA {
+      width: 60rem;
+      margin: 20px auto;
+      text-align: center;
+      justify-content: center;
+    }
+    
+    .carousel-item img {
+      width: 100%;
+      height: auto;
+    }
+    
+    .card-body {
+      text-align: center;
+      justify-content: center;
+    }
+    
+    .list-group {
+      text-align: center;
+      justify-content: center;
+      margin: 20px 0;
+    }
+    
+    .list-group-item {
+      background-color: #f8f9fa;
+      border: none;
+    }
+    
+    .container {
+      margin-top: 20px;
+    }
+    
+    #suggestions {
+      list-style: none;
+      background-color: #f1f2f3;
+      padding: 15px;
+      border: 1px solid #bdbdf5;
+      border-radius: 15px;
+    }
+    
+    #loading-indicator {
+      display: none;
+      width: 50px;
+      margin: 0 auto;
+    }
