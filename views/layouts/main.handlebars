@@ -50,6 +50,11 @@
             <li class="nav-item">
               <a class="nav-link" href="/cart">Cart</a>
             </li>
+            {{#if loggedIn}}
+            <li class="nav-item">
+              <a class="nav-link" href="/purchased">Purchase History</a>
+            </li>
+            {{/if}}
           </ul>
           <ul class="navbar-nav ml-auto justify-space-between">
             <li style="display: flex" class="nav-item">
