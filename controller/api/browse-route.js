@@ -11,8 +11,6 @@ router.get('/', async (req, res) => {
       return library.get({ plain: true }) 
     });
 
-    // console.log(bookInfo)
-    // Send over the 'loggedIn' session variable to the 'homepage' template
     res.render('browse', {
       book: book,
       loggedIn: req.session?.loggedIn, 

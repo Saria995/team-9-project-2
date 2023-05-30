@@ -2,6 +2,8 @@ const router = require('express').Router();
 const {Book} = require('../models');
 const Cart = require('../models/Cart'); 
 const User = require('../models/User');
+const OrderItem = require('../models/OrderItem'); 
+const Order = require('../models/Order'); 
 
 // route to get all dishes
 router.get('/', async (req, res) => {
@@ -22,7 +24,6 @@ router.get('/sign-up', (req, res) => {
 
 // Logout page
 router.get('/logout', (req, res) => {
-  // Redirect the user to the /api/auth/logout route
   res.redirect('/api/auth/logout');
 });
 
@@ -31,7 +32,10 @@ router.get('/book/:id', async (req, res) => {
     const dbBookData = await Book.findByPk(req.params.id)
     const book = dbBookData.get({ plain: true });
 
-    res.render('book', { book
+    res.render('book', { 
+      book,
+      loggedIn: req.session?.loggedIn, 
+      user: req.session?.user
     });
   } catch (err) {
     console.log(err);
@@ -56,7 +60,11 @@ router.post('/cart', async (req, res) => {
 
     const carts = cartData.map((cart) => cart.get({ plain: true }));
 
-    res.status(201).render('cart', { cart: carts });
+    res.status(201).render('cart', { 
+      cart: carts,      
+      loggedIn: req.session?.loggedIn, 
+      user: req.session?.user
+     });
   } catch (error) {
     console.error('Error creating cart:', error);
     res.status(500).json({ error: 'Failed to create cart' });
@@ -65,20 +73,20 @@ router.post('/cart', async (req, res) => {
 
 router.get('/cart', async (req, res) => {
   try {
-    // Fetch the updated cart information
     const cartData = await Cart.findAll({
-      where: { user_id: 1 }, // Adjust the user ID as per your requirement
+      where: { user_id: 1 }, 
       include: [
-        { model: Book, as: 'book' } // Include the Book model for book details
+        { model: Book, as: 'book' } 
       ]
     });
 
-    // Convert the cart data to plain JSON objects
     const carts = cartData.map((cart) => cart.get({ plain: true }));
 
-    console.log(carts);
-    // Render the 'cart' view and pass the cart information as a data object
-    res.render('cart', { cart: carts });
+    res.render('cart', { 
+      cart: carts ,
+      loggedIn: req.session?.loggedIn, 
+      user: req.session?.user
+    });
 
   } catch (error) {
     console.error('Error retrieving cart:', error);
@@ -92,6 +100,21 @@ router.post('/cart/:id', async (req, res) => {
   try {
     await Cart.destroy({ where: { id: cart_Id } });
 
+    res.redirect('/cart'); 
+  } catch (error) {
+    console.error('Error deleting book from cart:', error);
+    res.status(500).json({ error: 'Failed to delete book from cart' });
+  }
+});
+
+router.post('/order', async (req, res) => {
+
+  try {
+    // ADD CODE HERE TO CREATE ORDER AND ORDER ITEM DATA
+
+
+    await Cart.destroy({ where: { user_id: 1 }})
+;
     res.redirect('/cart'); 
   } catch (error) {
     console.error('Error deleting book from cart:', error);

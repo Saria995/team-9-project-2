@@ -4,6 +4,8 @@ const Author = require('./Author');
 const Genre = require('./Genre');
 const Address = require('./Address');
 const Cart = require('./Cart');
+const OrderItem = require('./OrderItem');
+const Order = require('./Order');
 const Purchase = require('./Purchase');
 
 // Products belongsTo Category
@@ -50,6 +52,17 @@ Cart.belongsTo(Book, {
   foreignKey: 'book_id',
 });
 
+Order.belongsToMany(Book, {
+  through: OrderItem,
+  foreignKey: 'order_id',
+  as: 'books',
+});
+
+Book.belongsToMany(Order, {
+  through: OrderItem,
+  foreignKey: 'book_id',
+  as: 'orders',
+});
 
 module.exports = {
     User, 
@@ -58,5 +71,6 @@ module.exports = {
     Genre, 
     Address,
     Cart,
-    Purchase
+    Purchase,
+    OrderItem
 };

@@ -31,7 +31,6 @@ router.post('/', async (req, res) => {
             }
         );
 
-        console.log(completion.data.choices);
         // return the recommendations
         res.status(200).json({recommendations: completion.data.choices[0].message.content.split("\n")});
     } catch (err) {

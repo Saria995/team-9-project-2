@@ -34,11 +34,10 @@
         {{/each}}
       </section>
 
-    <button type="button" class="btn btn-secondary" id="continueBrowsing">
-      Continue browsing
-    </button>
-    <button type="button" class="btn btn-primary" id="confirmPurchase">
-      Confirm purchase!
-    </button>
+    <a href="/browse" class="btn btn-primary add-to-cart-btn" id="continueBrowsing">Continue browsing</a>
+    
+    <form action="/order" method="POST">
+        <button type="submit" class="btn btn-danger">Confirm purchase!</button> 
+    </form>
 
 
