@@ -94,6 +94,9 @@ The following image shows the web application's appearance and functionality:
 ### Sign Up Page
 ![Alt text](public/Assets/images/localhost_3001_sign-up.png)
 
+### Upload Page
+![Alt text](public/Assets/images/upload%20eBook%20Library.png)
+
 ## Link to Deployed Site/GitHub Repo
 
 * Heroku: https://protected-mountain-98242.herokuapp.com/
