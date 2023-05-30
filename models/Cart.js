@@ -18,24 +18,14 @@ Cart.init(
       key: 'id',
     },
   },
-  book_Id: {
+  book_id: {
     type: DataTypes.INTEGER,
     allowNull: true,
     references: {
       model: 'book',
       key: 'id',
     },
-  },
-  createdAt: {
-    type: DataTypes.DATE,
-    allowNull: false,
-    defaultValue: DataTypes.NOW,
-  },
-  updatedAt: {
-    type: DataTypes.DATE,
-    allowNull: false,
-    defaultValue: DataTypes.NOW,
-  },
+  }
 },
 {
   sequelize,

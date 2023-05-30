@@ -1,0 +1,16 @@
+<section class="card">
+       <table class="table table-hover">
+        <thead>
+          <tr>
+            <th scope="col">{{book.title}}</th>
+            <th scope="col">{{book.price}}</th>
+            <td>
+                <form action="/cart/{{id}}" method="POST">
+                    <input type="hidden" name="_method" value={{id}}> 
+                    <button type="submit" class="btn btn-danger">Delete</button> 
+                </form>
+            </td>
+          </tr>
+        </thead>
+      </table>
+</section>

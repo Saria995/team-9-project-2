@@ -31,16 +31,8 @@
     <h2>Book Results!</h2>
     <div id="noResultsMessage" style="display: none; background-color: #f8d7da; padding: 10px; color: #721c24;">Book not available</div>
     <div class="row">
-      {{#each bookInfo}}
-      <div class="col-md-4">
-        <div class="book-card bg-light">
-          <img src="{{image_link}}" alt="{{this.title}}" />
-          <h4>{{this.title}}</h4>
-          <p>{{this.description}}</p>
-          <p class="price">{{this.price}}</p>
-          <button type="button" class="btn btn-primary add-to-cart-btn">Add to Cart</button>
-        </div>
-      </div>
+      {{#each book as |books|}}
+      {{>book-details}}
       {{/each}}
     </div>
   </div>

@@ -92,19 +92,8 @@
           </tr>
         </thead>
         {{#each purchased as |purchase| }}
-        <tbody id="purchasesTableBody">
-          <!-- Purchases data -->
-          <!-- /Purchases data -->
-            <tr>
-            {{!-- <th scope="col">PurchaseId</th>
-            <th scope="col">UserId</th>
-            <th scope="col">BookId</th> --}}
-            <td scope="col">{{purchase.title}}</td>
-            <td scope="col">{{purchase.price}}</td>
-            <td scope="col">{{purchase.date}}</td>
-          </tr>
-          <tbody>
-          {{/each}}
+          {{>purchase-details}}
+        {{/each}}
  
        
         

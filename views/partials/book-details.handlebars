@@ -1,4 +1,4 @@
-<section class="card">
+{{!-- <section class="card">
   
     <header>{{title}}</header>
 
@@ -8,5 +8,14 @@
       <p>{{price}}</p>
     </div>
  
-</section>
+</section> --}}
 
+<div class="col-md-4">
+  <div class="book-card bg-light">
+    <img src="{{image_link}}" alt="{{this.title}}" />
+    <h4>{{this.title}}</h4>
+    <p>{{this.description}}</p>
+    <p class="price">{{this.price}}</p>
+    <a href="/book/{{this.id}}" class="btn btn-primary add-to-cart-btn">View info</a>
+  </div>
+</div>
