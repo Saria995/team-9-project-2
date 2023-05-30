@@ -1,5 +1,4 @@
-<style>
-  .container {
+.container {
     text-align: center;
     max-width: 500px;
     margin: 0 auto;
@@ -8,40 +7,40 @@
     border-radius: 5px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   }
-
+  
   .container h3 {
     font-size: 24px;
     color: #333;
     margin-bottom: 10px;
   }
-
+  
   .flex-row {
     display: flex;
     flex-direction: row;
     justify-content: center;
   }
-
+  
   .card-body {
     background-color: #fff;
     padding: 20px;
     border-radius: 5px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   }
-
+  
   .card-body p {
     margin: 5px 0;
     font-size: 16px;
     color: #555;
   }
-
+  
   form {
     margin-top: 20px;
   }
-
+  
   input[type="hidden"] {
     display: none;
   }
-
+  
   button {
     padding: 10px 20px;
     background-color: #4CAF50;
@@ -51,26 +50,8 @@
     font-size: 16px;
     cursor: pointer;
   }
-
+  
   button:hover {
     background-color: #45a049;
   }
-</style>
-
-<section class="container">
-  <h3>ABOUT THE BOOK</h3>
-  <section class="flex-row justify-center">
-    <div class="card-body">
-      <p><strong>{{book.title}}</strong></p>
-      <p><em>{{book.author}}</em></p>
-      <p>{{book.publication_year}}</p>
-      <p><strong><span style="color: green;">Stock available: {{book.quantity}}</span></strong></p>
-      <p><span style="color: red;">Price: ${{book.price}}</span></p>
-      <p>{{book.description}}</p>
-      <form action="/cart" method="POST">
-        <input type="hidden" name="id" value="{{book.id}}">
-        <button type="submit">Add to Cart</button>
-      </form>
-    </div>
-  </section>
-</section>
+  
