@@ -38,6 +38,17 @@ Purchase.belongsTo(User, {
   foreignKey: 'purchase_id'
 });
 
+User.hasMany(Cart, {
+  foreignKey: 'user_id',
+});
+
+Book.hasMany(Cart, {
+  foreignKey: 'book_id',
+});
+
+Cart.belongsTo(Book, {
+  foreignKey: 'book_id',
+});
 
 
 module.exports = {

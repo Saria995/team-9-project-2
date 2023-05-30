@@ -1,6 +1,7 @@
 const router = require('express').Router();
 const {Book} = require('../models');
-
+const Cart = require('../models/Cart'); 
+const User = require('../models/User');
 
 // route to get all dishes
 router.get('/', async (req, res) => {
@@ -27,10 +28,9 @@ router.get('/logout', (req, res) => {
 
 router.get('/book/:id', async (req, res) => {
   try {
-
     const dbBookData = await Book.findByPk(req.params.id)
     const book = dbBookData.get({ plain: true });
-    console.log(book)
+
     res.render('book', { book
     });
   } catch (err) {
@@ -38,4 +38,52 @@ router.get('/book/:id', async (req, res) => {
     res.status(500).json(err);
   }
 });
+
+// create new item 
+router.post('/cart', async (req, res) => {
+  try {
+    const cart = await Cart.create({
+      user_id: 1,
+      book_id: parseInt(req.body.id)
+    });
+
+    const cartData = await Cart.findAll({
+      where: { user_id: 1 }, 
+      include: [
+        { model: Book, as: 'book' } 
+      ]
+    });
+
+    const carts = cartData.map((cart) => cart.get({ plain: true }));
+
+    res.status(201).render('cart', { cart: carts });
+  } catch (error) {
+    console.error('Error creating cart:', error);
+    res.status(500).json({ error: 'Failed to create cart' });
+  }
+});
+
+router.get('/cart', async (req, res) => {
+  try {
+    // Fetch the updated cart information
+    const cartData = await Cart.findAll({
+      where: { user_id: 1 }, // Adjust the user ID as per your requirement
+      include: [
+        { model: Book, as: 'book' } // Include the Book model for book details
+      ]
+    });
+
+    // Convert the cart data to plain JSON objects
+    const carts = cartData.map((cart) => cart.get({ plain: true }));
+
+    console.log(carts);
+    // Render the 'cart' view and pass the cart information as a data object
+    res.render('cart', { cart: carts });
+
+  } catch (error) {
+    console.error('Error retrieving cart:', error);
+    res.status(500).json({ error: 'Failed to retrieve cart' });
+  }
+});
+
 module.exports = router;
