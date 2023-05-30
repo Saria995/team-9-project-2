@@ -1,4 +1,4 @@
-# team-9-project-2
+# Ebook Library
 
 ## Description
 
