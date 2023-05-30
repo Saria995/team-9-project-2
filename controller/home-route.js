@@ -86,4 +86,17 @@ router.get('/cart', async (req, res) => {
   }
 });
 
+
+router.post('/cart/:id', async (req, res) => {
+  const cart_Id = req.params.id;
+  try {
+    await Cart.destroy({ where: { id: cart_Id } });
+
+    res.redirect('/cart'); 
+  } catch (error) {
+    console.error('Error deleting book from cart:', error);
+    res.status(500).json({ error: 'Failed to delete book from cart' });
+  }
+});
+
 module.exports = router;
