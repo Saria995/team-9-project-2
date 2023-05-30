@@ -79,11 +79,25 @@ This app was built using the following technologies:
 
 The following image shows the web application's appearance and functionality:
 
+### Home Page
+![Alt text](public/Assets/images/Home%20page.png)
+
+### Browse Page
+![Alt text](public/Assets/images/Browse%20Page.png)
+
+### Cart Page
+![Alt text](public/Assets/images/cart%20page.png)
+
+### Login Page
+![Alt text](public/Assets/images/Login%20Page.png)
+
+### Sign Up Page
+![Alt text](public/Assets/images/localhost_3001_sign-up.png)
 
 ## Link to Deployed Site/GitHub Repo
 
-* Heroku: 
-* GitHub Repo:  
+* Heroku: https://protected-mountain-98242.herokuapp.com/
+* GitHub Repo: https://github.com/Saria995/team-9-project-2.git
 
 ## Copyright 
 
