@@ -78,11 +78,10 @@
   </style>
 </head>
 <body>
- 
-    <div id="purchasesDiv">
-      <h1 class="mt-5">Purchases history</h1>
+  <div id="purchasesDiv">
+    <h1 class="mt-5">Purchases history</h1>
 
-      <!-- Purchases table -->
+    <!-- Purchases table -->
       <table class="table table-hover">
         <thead>
           <tr>
@@ -90,15 +89,16 @@
             <th scope="col">Price</th>
             <th scope="col">Date Purchased</th>
           </tr>
-        </thead>
-        {{#each purchased as |purchase| }}
-          {{>purchase-details}}
-        {{/each}}
- 
-       
-        
-        </thead>
-         
-        </tbody>
-      </table>
-    </div>
+        </thead>     
+      </tbody>
+    </table>
+    {{#each orders}}
+      <div class="order">
+        <ul>
+          {{#each books}}
+            <li>{{book_title}}</li>
+          {{/each}}
+        </ul>
+      </div>
+    {{/each}}
+  </div>

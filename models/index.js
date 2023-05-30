@@ -52,16 +52,24 @@ Cart.belongsTo(Book, {
   foreignKey: 'book_id',
 });
 
-Order.belongsToMany(Book, {
-  through: OrderItem,
-  foreignKey: 'order_id',
-  as: 'books',
-});
+// Order.belongsToMany(Book, {
+//   through: OrderItem,
+//   foreignKey: 'order_id',
+//   as: 'books',
+// });
 
 Book.belongsToMany(Order, {
   through: OrderItem,
   foreignKey: 'book_id',
   as: 'orders',
+});
+
+Order.belongsTo(User, { 
+  foreignKey: 'user_id' 
+});
+
+Order.belongsTo(Book, { 
+  foreignKey: 'book_id' 
 });
 
 module.exports = {
@@ -72,5 +80,6 @@ module.exports = {
     Address,
     Cart,
     Purchase,
-    OrderItem
+    OrderItem,
+    Order
 };

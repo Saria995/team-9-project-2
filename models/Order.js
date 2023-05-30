@@ -14,25 +14,7 @@ const Order = sequelize.define('Order', {
       model: 'user',
       key: 'id',
     },
-  },
-  totalAmount: {
-    type: DataTypes.DECIMAL(10, 2),
-    allowNull: false,
-  },
-  status: {
-    type: DataTypes.STRING,
-    allowNull: false,
-  },
-  createdAt: {
-    type: DataTypes.DATE,
-    allowNull: false,
-    defaultValue: DataTypes.NOW,
-  },
-  updatedAt: {
-    type: DataTypes.DATE,
-    allowNull: false,
-    defaultValue: DataTypes.NOW,
-  },
+  }
 },
 {
   sequelize,

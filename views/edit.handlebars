@@ -1,0 +1,56 @@
+<form action="/book/{{book.id}}" method="POST">
+  {{!-- Set the method override to PUT --}}
+  <input type="hidden" name="_method" value="PUT">
+
+  <div class="form-group">
+    <label for="title">Title</label>
+    <input type="text" class="form-control" id="title" name="title" value="{{book.title}}" required>
+  </div>
+
+  <div class="form-group">
+    <label for="author">Author</label>
+    <input type="text" class="form-control" id="author" name="author" value="{{book.author}}" required>
+  </div>
+
+  <div class="form-group">
+    <label for="publication_year">Publication Year</label>
+    <input type="number" class="form-control" id="publication_year" name="publication_year" value="{{book.publication_year}}" required>
+  </div>
+
+  <div class="form-group">
+    <label for="isbn">ISBN</label>
+    <input type="text" class="form-control" id="isbn" name="isbn" value="{{book.isbn}}" required>
+  </div>
+
+  <div class="form-group">
+    <label for="price">Price</label>
+    <input type="number" class="form-control" id="price" name="price" value="{{book.price}}" required>
+  </div>
+
+  <div class="form-group">
+    <label for="quantity">Quantity</label>
+    <input type="number" class="form-control" id="quantity" name="quantity" value="{{book.quantity}}" required>
+  </div>
+
+  <div class="form-group">
+    <label for="description">Description</label>
+    <textarea class="form-control" id="description" name="description">{{book.description}}</textarea>
+  </div>
+
+  <div class="form-group">
+    <label for="genre_id">Genre ID</label>
+    <input type="number" class="form-control" id="genre_id" name="genre_id" value="{{book.genre_id}}" required>
+  </div>
+
+  <div class="form-group">
+    <label for="author_id">Author ID</label>
+    <input type="number" class="form-control" id="author_id" name="author_id" value="{{book.author_id}}" required>
+  </div>
+
+  <div class="form-group">
+    <label for="image_link">Image Link</label>
+    <input type="text" class="form-control" id="image_link" name="image_link" value="{{book.image_link}}">
+  </div>
+
+  <button type="submit" class="btn btn-primary">Update Book</button>
+</form>

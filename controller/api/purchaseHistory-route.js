@@ -12,13 +12,9 @@ router.get('/', async (req, res) => {
         },
       });
       
-      
-      
       const purchased = purchaseInfo.map((library) =>
         library.get({ plain: true }), 
       );
-      console.log(purchased);
-      // Send over the 'loggedIn' session variable to the 'homepage' template
       res.render('purchased', {
         purchased,
         loggedIn: req.session?.loggedIn, 
