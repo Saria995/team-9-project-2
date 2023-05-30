@@ -1,12 +1,17 @@
-        <tbody id="purchasesTableBody">
-          <!-- Purchases data -->
-          <!-- /Purchases data -->
-            <tr>
-            {{!-- <th scope="col">PurchaseId</th>
-            <th scope="col">UserId</th>
-            <th scope="col">BookId</th> --}}
-            <td scope="col">{{purchase.title}}</td>
-            <td scope="col">{{purchase.price}}</td>
-            <td scope="col">{{purchase.date}}</td>
-          </tr>
-          <tbody>
+
+<!-- orders.hbs -->
+
+{{#if orders}}
+  <h1>Order History</h1>
+  <ul>
+    {{#each orders}}
+      <li>
+        <h2>Order ID: {{order_id}}</h2>
+        <p>User ID: {{user_id}}</p>
+        <p>Book Title: {{book_title}}</p>
+      </li>
+    {{/each}}
+  </ul>
+{{else}}
+  <p>No orders found.</p>
+{{/if}}
