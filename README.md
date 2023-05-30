@@ -99,7 +99,7 @@ The following image shows the web application's appearance and functionality:
 
 ## Link to Deployed Site/GitHub Repo
 
-* Heroku: https://protected-mountain-98242.herokuapp.com/
+* Heroku: https://team9-ebook-library.herokuapp.com/
 * GitHub Repo: https://github.com/Saria995/team-9-project-2.git
 
 ## Copyright 
